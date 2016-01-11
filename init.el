@@ -219,6 +219,7 @@ layers configuration. You are free to put any user code."
    (setq powerline-default-separator 'arrow)
    (global-company-mode)
    (linum-relative-global-mode)
+   (global-git-commit-mode)
 
    (setq default-input-method 'xh)
    (spacemacs//set-monospaced-font "Consolas for Powerline" "Microsoft YaHei" 17 18)
