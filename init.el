@@ -32,8 +32,6 @@ values."
      ( chinese :variables
                chinese-default-input-method 'wubi)
      emacs-lisp
-     (spell-checking :variables
-                     spell-checking-enable-auto-dictionary t)
 
      git
      ;; markdown
@@ -200,16 +198,18 @@ values."
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
    dotspacemacs-default-package-repository nil
+
    ))
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
-
-  (register-input-method
-   "xh" "euc-cn" 'chinese-wbim-use-package
+  (register-input-method "xh" "euc-cn" 'chinese-wbim-use-package
    "xh" "xh" "~/.spacemacs.d/pinyin.txt")
+  (setenv "http_proxy" "http://192.168.50.1:8087")
+  (setq tramp-ssh-controlmaster-options
+        "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
 )
 
 (defun dotspacemacs/user-config ()
@@ -218,10 +218,10 @@ user code."
 layers configuration. You are free to put any user code."
    (setq powerline-default-separator 'arrow)
    (global-company-mode)
+   (linum-relative-global-mode)
 
    (setq default-input-method 'xh)
    (spacemacs//set-monospaced-font "Consolas for Powerline" "Microsoft YaHei" 17 18)
-
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
