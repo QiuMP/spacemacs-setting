@@ -90,7 +90,7 @@ values."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
                          solarized-dark
-						 monokai
+                         monokai
                          solarized-light
                          leuven
                          ;; spacemacs-light
@@ -101,7 +101,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Consolas for Powerline"
+   dotspacemacs-default-font '("Consolas"
                                :size 17
                                :weight normal
                                :width normal
@@ -222,7 +222,7 @@ layers configuration. You are free to put any user code."
    (global-git-commit-mode)
 
    (setq default-input-method 'xh)
-   (spacemacs//set-monospaced-font "Consolas for Powerline" "Microsoft YaHei" 17 18)
+   (spacemacs//set-monospaced-font "Consolas" "Microsoft YaHei" 17 18)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
