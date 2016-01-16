@@ -106,8 +106,7 @@ values."
                                :weight normal
                                :width normal
                                :powerline-scale 1.4)
-   ;; The leader key
-   dotspacemacs-leader-key "SPC"
+   ;; The leader key dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
    ;; (default "M-m")
    dotspacemacs-emacs-leader-key "M-m"
@@ -223,6 +222,8 @@ layers configuration. You are free to put any user code."
 
    (setq default-input-method 'xh)
    (spacemacs//set-monospaced-font "Consolas" "Microsoft YaHei" 17 18)
+
+   (cd "/home/qiu/mydrive/mywork/笔记")
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
