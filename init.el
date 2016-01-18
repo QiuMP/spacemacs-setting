@@ -90,8 +90,8 @@ values."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
                          solarized-dark
-                         monokai
                          solarized-light
+                         monokai
                          leuven
                          ;; spacemacs-light
                          ;; spacemacs-dark
@@ -222,8 +222,6 @@ layers configuration. You are free to put any user code."
 
    (setq default-input-method 'xh)
    (spacemacs//set-monospaced-font "Consolas" "Microsoft YaHei" 17 18)
-
-   (cd "/home/qiu/mydrive/mywork/笔记")
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
