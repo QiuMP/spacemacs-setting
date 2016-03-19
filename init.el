@@ -53,9 +53,8 @@ values."
    ;; configuration in `dotspacemacs/config'.
    dotspacemacs-additional-packages
    '(
-     ctable
-     orglue
-     org-octopress
+     hyde
+     table
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
