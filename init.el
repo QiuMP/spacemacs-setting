@@ -53,8 +53,9 @@ values."
    ;; configuration in `dotspacemacs/config'.
    dotspacemacs-additional-packages
    '(
-     hyde
-     table
+     orglue
+     ctable
+     org-octopress
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
@@ -77,8 +78,7 @@ values."
   ;; spacemacs settings.
   (setq-default
    ;; One of `vim', `emacs' or `hybrid'. Evil is always enabled but if the
-   ;; variable is `emacs' then the `holy-mode' is enabled at startup. `hybrid'
-   ;; uses emacs key bindings for vim's insert mode, but otherwise leaves evil
+   ;; variable is `emacs' then the `holy-mode' is enabled at startup. `hybrid';; uses emacs key bindings for vim's insert mode, but otherwise leaves evil
    ;; unchanged. (default 'vim)
    dotspacemacs-editing-style 'vim
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
@@ -233,6 +233,13 @@ layers configuration. You are free to put any user code."
    (setq default-input-method 'xh)
    (spacemacs//set-monospaced-font "Consolas" "Microsoft YaHei" 17 18)
 
+   ;;org-octopress
+   (require 'org-octopress)
+   (setq org-octopress-directory-top       "~/myblog")
+   (setq org-octopress-directory-posts     "~/myblog/_posts")
+   (setq org-octopress-directory-org-top   "~/myblog")
+   (setq org-octopress-directory-org-posts "~/myblog/blog")
+   (setq org-octopress-setup-file          "~/myblog/setupfile.org")
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
