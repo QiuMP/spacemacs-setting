@@ -25,6 +25,11 @@ values."
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-help-tooltip t)
+     shell-scripts
+     (shell :variables
+            shell-default-shell 'shell
+            shell-default-term-shell "/bin/zsh"
+            shell-enable-smart-eshell t)
      better-defaults
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
@@ -34,7 +39,7 @@ values."
      emacs-lisp
 
      git
-     ;; markdown
+     markdown
      org
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -46,7 +51,12 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages
+   '(
+     ctable
+     orglue
+     org-octopress
+     )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
    '(
@@ -89,9 +99,9 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
+                         monokai
                          solarized-dark
                          solarized-light
-                         monokai
                          leuven
                          ;; spacemacs-light
                          ;; spacemacs-dark
@@ -204,11 +214,12 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
-  (register-input-method "xh" "euc-cn" 'chinese-wbim-use-package
-   "xh" "xh" "~/.spacemacs.d/pinyin.txt")
-  (setenv "http_proxy" "http://192.168.50.1:8087")
-  (setq tramp-ssh-controlmaster-options
+   (register-input-method "xh" "euc-cn" 'chinese-wbim-use-package
+    "xh" "xh" "~/.spacemacs.d/pinyin.txt")
+   (setenv "http_proxy" "http://192.168.50.1:8087")
+   (setq tramp-ssh-controlmaster-options
         "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+
 )
 
 (defun dotspacemacs/user-config ()
@@ -222,6 +233,7 @@ layers configuration. You are free to put any user code."
 
    (setq default-input-method 'xh)
    (spacemacs//set-monospaced-font "Consolas" "Microsoft YaHei" 17 18)
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
