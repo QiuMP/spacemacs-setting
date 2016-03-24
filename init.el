@@ -41,6 +41,8 @@ values."
      git
      markdown
      org
+     python
+     sql
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -60,6 +62,7 @@ values."
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
    '(
+     pangu-spacing
      chinese-pyim
      )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -215,7 +218,7 @@ It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
    (register-input-method "xh" "euc-cn" 'chinese-wbim-use-package
     "xh" "xh" "~/.spacemacs.d/pinyin.txt")
-   (setenv "http_proxy" "http://192.168.50.1:8087")
+   ;(setenv "http_proxy" "http://192.168.50.1:8087")
    (setq tramp-ssh-controlmaster-options
         "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
 
